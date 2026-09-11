@@ -104,7 +104,7 @@ const categories: Category[] = [
   {
     id: "06",
     name: "THE 4TH WALL",
-    point: { x: 61.8, y: 51.5 },
+    point: { x: 64.5, y: 49.3 },
     detailSrc: "yoshi-moshi-model-stage-light.png",
     outline:
       "M56.2 46.7 C58.1 45.5 60.7 46.2 62.7 45.7 C65.1 46.3 67.1 45.9 67.6 48.2 C67.1 50.5 67.9 52.8 67.1 55.5 C65.3 57.2 62.9 56.5 60.7 57.1 C58.4 56.4 56.1 57.2 55.8 54.6 C56.4 52.3 55.6 49.3 56.2 46.7 Z",
@@ -114,7 +114,7 @@ const categories: Category[] = [
   {
     id: "07",
     name: "FILMS + PERFORMANCES",
-    point: { x: 49.2, y: 53.2 },
+    point: { x: 47, y: 54.8 },
     detailSrc: "yoshi-moshi-model-stage-light.png",
     outline:
       "M43.2 48.6 C45 47.5 47.2 48.2 49 47.7 C51.2 48.4 53.5 47.5 54.8 48.7 C55.5 51.1 54.7 53.4 55.2 55.5 C54.4 57.7 51.8 58.4 49.6 58.1 C47.3 58.8 44.4 58.2 43.1 56.8 C42.5 54.4 43.4 51.4 43.2 48.6 Z",
