@@ -160,6 +160,34 @@ a:focus-visible {
   filter: drop-shadow(8px 10px 0 rgba(65, 0, 0, 0.22));
 }
 
+.entry-handmade-stamp {
+  position: absolute;
+  z-index: 3;
+  top: clamp(28px, 7vh, 88px);
+  right: clamp(28px, 7vw, 120px);
+  width: clamp(150px, 17vw, 290px);
+  height: auto;
+  opacity: 0.82;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  user-select: none;
+  transform: rotate(9deg);
+  transform-origin: center;
+  animation: handmade-stamp-drift 4.8s ease-in-out infinite alternate;
+}
+
+@keyframes handmade-stamp-drift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(8deg) scale(0.98);
+  }
+  55% {
+    transform: translate3d(-7px, 5px, 0) rotate(11deg) scale(1.025);
+  }
+  100% {
+    transform: translate3d(3px, -5px, 0) rotate(7deg) scale(1);
+  }
+}
+
 .entry-action {
   position: absolute;
   z-index: 2;
@@ -2106,6 +2134,13 @@ a:focus-visible {
 
   .entry-cross {
     width: clamp(105px, 32vw, 180px);
+  }
+
+  .entry-handmade-stamp {
+    top: 18px;
+    right: -10px;
+    width: clamp(118px, 34vw, 168px);
+    opacity: 0.76;
   }
 
   .entry-action {

@@ -503,6 +503,12 @@ export default function Home() {
           <strong>No humor<br />= no entry</strong>
           <img className="entry-cross" src="entry-red-cross.png" alt="" draggable={false} />
         </span>
+        <img
+          className="entry-handmade-stamp"
+          src="handmade-stamp.png"
+          alt="100% Handmade"
+          draggable={false}
+        />
         <span className="entry-action">Click for breaking news</span>
       </button>
 
