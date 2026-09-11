@@ -167,8 +167,7 @@ a:focus-visible {
   right: clamp(28px, 7vw, 120px);
   width: clamp(150px, 17vw, 290px);
   height: auto;
-  opacity: 0.82;
-  mix-blend-mode: multiply;
+  opacity: 1;
   pointer-events: none;
   user-select: none;
   transform: rotate(9deg);
@@ -2140,7 +2139,7 @@ a:focus-visible {
     top: 18px;
     right: -10px;
     width: clamp(118px, 34vw, 168px);
-    opacity: 0.76;
+    opacity: 1;
   }
 
   .entry-action {
