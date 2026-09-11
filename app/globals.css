@@ -1000,8 +1000,7 @@ a:focus-visible {
   position: relative;
   z-index: 3;
   width: 100%;
-  padding: clamp(18px, 2.5cqw, 32px) min(42%, 420px) clamp(16px, 2.2cqw, 28px)
-    max(clamp(22px, 6cqw, 84px), calc((100% - 62.5rem) / 2));
+  padding: clamp(18px, 2.5cqw, 32px) clamp(16px, 4cqw, 56px);
   border-top: clamp(6px, 0.9cqw, 12px) solid var(--rebel-pink);
   background: var(--paper);
   box-shadow: 0 clamp(8px, 1.2cqw, 16px) 0 var(--ink);
@@ -1015,6 +1014,54 @@ a:focus-visible {
   letter-spacing: -0.075em;
   line-height: 0.84;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+  line-height: 1;
+}
+
+.detail-navigation {
+  display: flex;
+  align-items: center;
+  min-height: 76px;
+  padding-right: 100px;
+  margin-bottom: clamp(16px, 2cqw, 28px);
+}
+
+.model-column.has-unified-detail .category-transition {
+  aspect-ratio: auto;
+}
+
+.category-transition .category-detail-unified {
+  position: relative;
+  height: auto;
+}
+
+.category-detail-unified .fourth-wall-layout {
+  position: relative;
+  grid-template-rows: auto auto;
+}
+
+.category-detail-unified .fourth-wall-media {
+  aspect-ratio: 2 / 1;
+  min-height: 180px;
+}
+
+.detail-navigation .detail-back {
+  position: static;
+  width: fit-content;
+  max-width: 100%;
+  height: auto;
+  min-height: 48px;
+  padding: 14px 16px;
+  font-size: clamp(0.875rem, 1.6cqw, 1.125rem);
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.model-column.has-unified-detail .model-menu-toggle:not(.is-open) {
+  top: clamp(24px, 3.4cqw, 44px);
+  right: clamp(16px, 4cqw, 56px);
+  width: 72px;
+  height: 64px;
 }
 
 .fourth-wall-heading .detail-kicker {

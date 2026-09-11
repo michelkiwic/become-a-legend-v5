@@ -621,6 +621,14 @@ export default function Home() {
             {detailId !== "07" ? (
               <div className="fourth-wall-layout">
                 <header className="fourth-wall-heading">
+                  <div className="detail-navigation">
+                    <button className="detail-back" type="button" onClick={(event) => {
+                      event.stopPropagation();
+                      returnToModel();
+                    }}>
+                      <span aria-hidden="true">←</span> Back to model
+                    </button>
+                  </div>
                   <h1
                     className={`detail-primary-title${detailId === "03" ? " detail-primary-title-pair" : ""}`}
                     id="category-detail-title"
@@ -723,7 +731,7 @@ export default function Home() {
               </div>
             )}
 
-            <button
+            {detailId === "07" && <button
               className="detail-back"
               type="button"
               onClick={(event) => {
@@ -732,7 +740,7 @@ export default function Home() {
               }}
             >
               <span aria-hidden="true">←</span> Back to model
-            </button>
+            </button>}
           </div>
           </div>
           {detailId !== "07" && activeDetailContent ? (
