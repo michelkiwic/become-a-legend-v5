@@ -1501,6 +1501,26 @@ a:focus-visible {
   animation: footer-contacts-wobble 3.4s 0.9s ease-in-out infinite;
 }
 
+/* Keep the complete stage inside short desktop viewports. Browser zoom can be
+   100% while OS display scaling and browser chrome still reduce the CSS
+   viewport height considerably. */
+@media (min-width: 761px) and (max-height: 850px) {
+  .model-section {
+    padding-top: 12px;
+  }
+
+  .model-column,
+  .category-index,
+  .closeup-grid {
+    width: min(100%, calc((100dvh - 112px) * 4 / 3));
+  }
+
+  .model-footer-action {
+    top: 86.5%;
+    min-height: clamp(44px, 5.2cqw, 64px);
+  }
+}
+
 .model-footer-action:hover,
 .model-footer-action:focus-visible {
   animation: none;
