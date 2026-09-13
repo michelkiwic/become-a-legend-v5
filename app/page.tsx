@@ -399,6 +399,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [fourthWallStill, setFourthWallStill] = useState(fourthWallStillImages[0]);
   const detailExitTimer = useRef<number | null>(null);
+  const handlingBrowserBack = useRef(false);
   const activeCategory = categories.find((category) => category.id === activeId);
   const detailCategory = categories.find((category) => category.id === detailId);
   const activeDetailContent = detailId ? detailContent[detailId] : null;
@@ -442,6 +443,12 @@ export default function Home() {
 
     setActiveId(id);
     setDetailId(id);
+    const detailState = { yoshiDetail: id };
+    if (window.history.state?.yoshiDetail) {
+      window.history.replaceState(detailState, "", `#${id}`);
+    } else {
+      window.history.pushState(detailState, "", `#${id}`);
+    }
     if (id === "06") {
       setFourthWallStill(
         fourthWallStillImages[Math.floor(Math.random() * fourthWallStillImages.length)],
@@ -450,7 +457,12 @@ export default function Home() {
     window.requestAnimationFrame(() => setIsDetailOpen(true));
   };
 
-  const returnToModel = () => {
+  const returnToModel = (fromBrowserBack = false) => {
+    if (!fromBrowserBack && window.history.state?.yoshiDetail) {
+      handlingBrowserBack.current = true;
+      window.history.back();
+      return;
+    }
     setMenuOpen(false);
     setActiveId(null);
 
@@ -468,6 +480,20 @@ export default function Home() {
       detailExitTimer.current = null;
     }, 720);
   };
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (handlingBrowserBack.current) {
+        handlingBrowserBack.current = false;
+      }
+      if (detailId) {
+        returnToModel(true);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [detailId]);
 
   const toggleCategory = (id: string) => {
     if (detailId === id) {
