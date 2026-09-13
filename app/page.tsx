@@ -597,7 +597,8 @@ export default function Home() {
                 <a
                   href="#model"
                   key={category.id}
-                  onClick={() => {
+                  onClick={(event) => {
+                    event.preventDefault();
                     toggleCategory(category.id);
                     setMenuOpen(false);
                   }}
