@@ -1149,7 +1149,10 @@ a:focus-visible {
 
 .detail-copy h1.detail-primary-title-pair {
   display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
   justify-items: start;
+  column-gap: 0.16em;
 }
 
 .detail-primary-title-pair > span {
@@ -1157,9 +1160,15 @@ a:focus-visible {
 }
 
 .detail-primary-title-pair .detail-title-plus {
-  justify-self: center;
+  grid-column: 2;
+  align-self: end;
+  justify-self: start;
   padding-right: 0.075em;
   line-height: 0.72;
+}
+
+.detail-primary-title-pair > span:last-child {
+  grid-column: 1 / -1;
 }
 
 .detail-kicker {
