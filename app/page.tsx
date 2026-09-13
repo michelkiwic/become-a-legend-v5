@@ -391,7 +391,9 @@ const detailContent: Record<string, DetailContent> = {
 };
 
 export default function Home() {
-  const [entryStage, setEntryStage] = useState<0 | 1 | 2>(0);
+  const [entryStage, setEntryStage] = useState<0 | 1 | 2>(() =>
+    typeof window !== "undefined" && window.sessionStorage.getItem("yoshi-model-entered") === "true" ? 2 : 0,
+  );
   const hasEntered = entryStage === 2;
   const [activeId, setActiveId] = useState<string | null>(null);
   const [detailId, setDetailId] = useState<string | null>(null);
@@ -443,7 +445,8 @@ export default function Home() {
 
     setActiveId(id);
     setDetailId(id);
-    const detailState = { yoshiDetail: id };
+    window.sessionStorage.setItem("yoshi-model-entered", "true");
+    const detailState = { yoshiView: "detail", yoshiDetail: id };
     if (window.history.state?.yoshiDetail) {
       window.history.replaceState(detailState, "", `#${id}`);
     } else {
@@ -483,6 +486,8 @@ export default function Home() {
 
   useEffect(() => {
     const handlePopState = () => {
+      window.sessionStorage.setItem("yoshi-model-entered", "true");
+      setEntryStage(2);
       if (handlingBrowserBack.current) {
         handlingBrowserBack.current = false;
       }
@@ -494,6 +499,12 @@ export default function Home() {
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, [detailId]);
+
+  const enterModel = () => {
+    window.sessionStorage.setItem("yoshi-model-entered", "true");
+    window.history.replaceState({ yoshiView: "model" }, "", window.location.href);
+    setEntryStage(2);
+  };
 
   const toggleCategory = (id: string) => {
     if (detailId === id) {
@@ -544,7 +555,7 @@ export default function Home() {
         aria-label="Enter the Become a Legend exhibition"
         aria-hidden={entryStage !== 1}
         tabIndex={entryStage === 1 ? 0 : -1}
-        onClick={() => setEntryStage(2)}
+        onClick={enterModel}
       >
         <span className="tour-dimmer" aria-hidden="true" />
         <span className="tour-poster">
@@ -637,7 +648,7 @@ export default function Home() {
             key={detailId}
             role="button"
             tabIndex={0}
-            onClick={returnToModel}
+            onClick={() => returnToModel()}
             onKeyDown={(event) => {
               if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault();
@@ -776,7 +787,7 @@ export default function Home() {
               aria-label={`Text for ${activeDetailContent.title}`}
               role="button"
               tabIndex={0}
-              onClick={returnToModel}
+              onClick={() => returnToModel()}
               onKeyDown={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
