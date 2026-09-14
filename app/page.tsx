@@ -390,6 +390,13 @@ const detailContent: Record<string, DetailContent> = {
   },
 };
 
+const suppliedDetailImages: Record<string, { src: string; alt: string }> = {
+  "02": { src: "dance-dolls-figures.webp", alt: "Suspended Dance Dolls figures" },
+  "03": { src: "yoshini-moshini-sculptures.webp", alt: "Yoshini and Moshini sculptures" },
+  "04": { src: "the-ensemble-figures.webp", alt: "The Ensemble of Yoshi and Moshi figures" },
+  "05": { src: "the-audience-figures.webp", alt: "The Audience of suspended Yoshi and Moshi figures" },
+};
+
 export default function Home() {
   const [entryStage, setEntryStage] = useState<0 | 1 | 2>(() =>
     typeof window !== "undefined" && window.sessionStorage.getItem("yoshi-model-entered") === "true" ? 2 : 0,
@@ -412,6 +419,7 @@ export default function Home() {
       : detailId === "08" || !detailCategory
         ? "yoshi-moshi-logo.webp"
         : detailCategory.closeup?.src ?? detailCategory.detailSrc;
+  const suppliedDetailImage = detailId ? suppliedDetailImages[detailId] : null;
 
   useEffect(() => {
     const updateInkWeight = () => {
@@ -682,12 +690,12 @@ export default function Home() {
                   <p className="detail-kicker">{activeDetailContent.kicker}</p>
                 </header>
                 <div className="fourth-wall-media">
-                  {detailId === "01" ? (
+                  {detailId === "01" || suppliedDetailImage ? (
                     <div className="fourth-wall-media-cell">
                       <img
                         className="fourth-wall-image fourth-wall-image-still"
-                        src="bla-blaa-blaa-figures.webp"
-                        alt="Three pale Bla Blaa Blaa figures with long paper ribbons"
+                        src={detailId === "01" ? "bla-blaa-blaa-figures.webp" : suppliedDetailImage!.src}
+                        alt={detailId === "01" ? "Three pale Bla Blaa Blaa figures with long paper ribbons" : suppliedDetailImage!.alt}
                         draggable={false}
                       />
                     </div>
