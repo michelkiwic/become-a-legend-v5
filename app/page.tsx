@@ -249,6 +249,41 @@ const detailContent: Record<string, DetailContent> = {
           "Yoshi + Moshi können nicht sprechen. Zum Glück können sie alles andere. In ihren Filmen und Performances wird die Welt zu ihrer Bühne. Sie reisen, begegnen Menschen, geraten in unmögliche Situationen, spielen, wiederholen, scheitern, verschwinden und tauchen wieder auf. Sie erklären nichts. Sie sind einfach da und überlassen den Rest unserer Fantasie. Damit stehen Yoshi + Moshi in einer langen Tradition von Performance, Theater und Film, in der Körper, Geste und Handlung mehr erzählen können als Worte. Zugleich erinnern sie an die grossen komischen Paare der Filmgeschichte: Zwei Figuren, eine Welt und genügend Möglichkeiten für Missverständnisse. Was Inszenierung ist und was Wirklichkeit, verliert dabei zunehmend an Bedeutung. Denn Yoshi + Moshi spielen keine Legenden: Sie leben ihre eigene.",
         ],
       },
+      {
+        heading: "Performances",
+        items: [
+          "TRIBUTE including Severin Hofer, Gallery Billing, Baar (CH)",
+          "Occupy Superba, Galata – Museo del Mare, Genoa (IT)",
+          "The Comeback Tour, Piazza dei Greci, Genoa (IT)",
+          "Universo Immersivo, Nidwalden Art Museum, Stans (CH)",
+          "IDÉE REÇUE, MACT/CACT Museo d’Arte Contemporanea Ticino, Bellinzona (CH)",
+          "Movie World Tour, Bar Delle Vigne, Genoa (IT)",
+          "Last Supper, gallery Weiertal, Winterthur (CH)",
+          "A feast for Yoshi + Moshi, Cabaret Voltaire, Zurich (CH)",
+          "A feast for Yoshi + Moshi, gallery of contemporary art of Lucerne (CH)",
+          "The Last Supper, Substitut – contemporary art from Switzerland, Berlin (GER)",
+          "Culture Clash, Kunstpause, Zug (CH)",
+        ],
+      },
+      {
+        heading: "Films / Documentaries",
+        items: [
+          "THE TOWER, Ligornetto (CH)",
+          "EXIT RIGHT, Ligornetto (CH)",
+          "Enigma Code, Chiasso (CH)",
+          "Háblame, Malnate (IT) & Buenos Aires (ARG)",
+          "YOSHI + MOSHI – Movie World Tour, Barbengo (CH) & Genoa (IT)",
+          "FACE YOSHI, Fano (CH)",
+          "LOST LOST, Labenne (FR)",
+          "Occupy ORF – A feast for Yoshi + Moshi, 30 min. TV movie, ORF III, Vienna (AT)",
+          "Homeless, Hossegor (FR)",
+          "Culture Clash, Berlin (GER)",
+          "A Feast for Yoshi + Moshi, gallery of contemporary art of Lucerne (CH)",
+          "A Feast for Yoshi + Moshi, Cabaret Voltaire, Zurich (CH)",
+          "Last Supper, Zug (CH)",
+          "Chou de Voltaire, Zug (CH)",
+        ],
+      },
     ],
   },
   "08": {
@@ -802,7 +837,7 @@ export default function Home() {
             </button>}
           </div>
           </div>
-          {detailId !== "07" && activeDetailContent ? (
+          {activeDetailContent ? (
             <article
               className={`detail-text-below${isDetailOpen ? "" : " is-closing"}`}
               aria-label={`Text for ${activeDetailContent.title}`}
