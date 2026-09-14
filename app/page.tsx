@@ -790,6 +790,12 @@ export default function Home() {
                         draggable={false}
                       />
                     </div>
+                  ) : detailId === "08" ? (
+                    <div className="fourth-wall-media-cell nina-texts-panel">
+                      <a className="nina-texts-trigger" href="nina-texts.pdf" target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>
+                        Nina&apos;s Texte
+                      </a>
+                    </div>
                   ) : (
                     <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
                       <img
@@ -837,7 +843,7 @@ export default function Home() {
             </button>}
           </div>
           </div>
-          {activeDetailContent ? (
+          {activeDetailContent && detailId !== "08" ? (
             <article
               className={`detail-text-below${isDetailOpen ? "" : " is-closing"}`}
               aria-label={`Text for ${activeDetailContent.title}`}
