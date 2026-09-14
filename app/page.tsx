@@ -395,6 +395,10 @@ const suppliedDetailImages: Record<string, { src: string; alt: string }> = {
   "03": { src: "yoshini-moshini-sculptures.webp", alt: "Yoshini and Moshini sculptures" },
   "04": { src: "the-ensemble-figures.webp", alt: "The Ensemble of Yoshi and Moshi figures" },
   "05": { src: "the-audience-figures.webp", alt: "The Audience of suspended Yoshi and Moshi figures" },
+  "08": { src: "texts-detail.webp", alt: "Close-up of white paper ribbons" },
+  finances: { src: "finances-detail.webp", alt: "Yoshi and Moshi portrait masks" },
+  inventory: { src: "inventory-detail.webp", alt: "Yoshi and Moshi exhibition figures" },
+  contacts: { src: "contacts-detail.webp", alt: "Yoshi and Moshi hanging masks" },
 };
 
 export default function Home() {
