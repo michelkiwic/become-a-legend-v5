@@ -682,7 +682,16 @@ export default function Home() {
                   <p className="detail-kicker">{activeDetailContent.kicker}</p>
                 </header>
                 <div className="fourth-wall-media">
-                  {(detailId === "04" || detailId === "05") && detailCategory?.backgroundSrc ? (
+                  {detailId === "01" ? (
+                    <div className="fourth-wall-media-cell">
+                      <img
+                        className="fourth-wall-image fourth-wall-image-still"
+                        src="bla-blaa-blaa-figures.webp"
+                        alt="Three pale Bla Blaa Blaa figures with long paper ribbons"
+                        draggable={false}
+                      />
+                    </div>
+                  ) : (detailId === "04" || detailId === "05") && detailCategory?.backgroundSrc ? (
                     <div className="fourth-wall-media-cell">
                       <img
                         className="fourth-wall-image detail-media-layer-background"
