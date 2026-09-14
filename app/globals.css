@@ -1197,6 +1197,24 @@ a:focus-visible {
   line-height: 0.72;
 }
 
+/* Keep Yoshini + Moshini together as one clear title line. */
+.detail-copy h1.detail-primary-title-pair {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.16em;
+  white-space: nowrap;
+  font-size: clamp(1.35rem, 5.25cqw, 5.2rem);
+}
+
+.detail-primary-title-pair .detail-title-plus,
+.detail-primary-title-pair > span:last-child {
+  grid-column: auto;
+  align-self: auto;
+  justify-self: auto;
+  padding-right: 0;
+}
+
 .detail-primary-title-pair > span:last-child {
   grid-column: 1 / -1;
 }
