@@ -429,7 +429,7 @@ const suppliedDetailImages: Record<string, { src: string; alt: string }> = {
   "02": { src: "dance-dolls-figures.webp", alt: "Suspended Dance Dolls figures" },
   "03": { src: "yoshini-moshini-sculptures.webp", alt: "Yoshini and Moshini sculptures" },
   "04": { src: "the-ensemble-figures.webp", alt: "The Ensemble of Yoshi and Moshi figures" },
-  "05": { src: "the-audience-figures.webp", alt: "The Audience of suspended Yoshi and Moshi figures" },
+  "05": { src: "the-audience-figures-v2.webp", alt: "The Audience of suspended Yoshi and Moshi figures with generous surrounding space" },
   "08": { src: "texts-detail.webp", alt: "Close-up of white paper ribbons" },
   finances: { src: "finances-detail.webp", alt: "Yoshi and Moshi portrait masks" },
   inventory: { src: "inventory-detail.webp", alt: "Yoshi and Moshi exhibition figures" },
