@@ -436,6 +436,11 @@ const suppliedDetailImages: Record<string, { src: string; alt: string }> = {
   contacts: { src: "contacts-detail.webp", alt: "Yoshi and Moshi hanging masks" },
 };
 
+const suppliedDetailVideos: Record<string, { src: string; poster?: string; label: string }> = {
+  "01": { src: "bla-blaa-blaa-video.webm", label: "Bla Blaa Blaa video" },
+  "02": { src: "dance-dolls-video.webm", label: "Dance Dolls video" },
+};
+
 export default function Home() {
   const [entryStage, setEntryStage] = useState<0 | 1 | 2>(() =>
     typeof window !== "undefined" && window.sessionStorage.getItem("yoshi-model-entered") === "true" ? 2 : 0,
@@ -788,6 +793,19 @@ export default function Home() {
                         src={detailCategory.detailSrc}
                         alt={detailCategory.closeup?.alt ?? `Figure for ${detailCategory.name}`}
                         draggable={false}
+                      />
+                    </div>
+                  ) : suppliedDetailVideos[detailId ?? ""] ? (
+                    <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
+                      <video
+                        className="fourth-wall-image fourth-wall-image-motion detail-video"
+                        src={suppliedDetailVideos[detailId ?? ""].src}
+                        aria-label={suppliedDetailVideos[detailId ?? ""].label}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
                       />
                     </div>
                   ) : detailId === "08" ? (
