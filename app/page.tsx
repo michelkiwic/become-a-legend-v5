@@ -138,7 +138,7 @@ const categories: Category[] = [
 const utilityCategories = [
   { id: "09", name: "Finances", detailId: "finances" },
   { id: "10", name: "Inventory", detailId: "inventory" },
-  { id: "11", name: "Contacts", detailId: "contacts" },
+  { id: "11", name: "Contact", detailId: "contacts" },
 ];
 
 const videoWallClipOrder = [1, 2, 9, 4, 5, 6, 7, 8, 3, 10, 11, 12];
@@ -395,7 +395,7 @@ const detailContent: Record<string, DetailContent> = {
   },
   contacts: {
     kicker: "Yoshi + Moshi / Team",
-    title: "Contacts",
+    title: "Contact",
     sections: [
       {
         heading: "Yoshi + Moshi artists",
@@ -919,7 +919,7 @@ export default function Home() {
             type="button"
             onClick={() => showDetail("contacts")}
           >
-            Contacts
+            Contact
           </button>
 
           <svg
