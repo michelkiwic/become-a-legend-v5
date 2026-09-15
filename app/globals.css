@@ -1155,6 +1155,12 @@ a:focus-visible {
   column-gap: 0.16em;
 }
 
+.detail-video {
+  object-fit: cover;
+  padding: 0;
+  animation: none;
+}
+
 .nina-texts-panel {
   display: flex;
   align-items: center;
