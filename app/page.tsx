@@ -733,7 +733,7 @@ export default function Home() {
                   </h1>
                   <p className="detail-kicker">{activeDetailContent.kicker}</p>
                 </header>
-                <div className="fourth-wall-media">
+                <div className={`fourth-wall-media${detailId === "contacts" ? " single-detail-media" : ""}`}>
                   {detailId === "01" || suppliedDetailImage ? (
                     <div className="fourth-wall-media-cell">
                       <img
@@ -762,7 +762,7 @@ export default function Home() {
                       />
                     </div>
                   )}
-                  {detailId === "05" && detailCategory ? (
+                  {detailId === "contacts" ? null : detailId === "05" && detailCategory ? (
                     <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
                       <img
                         className="fourth-wall-image fourth-wall-image-motion"

@@ -1155,6 +1155,10 @@ a:focus-visible {
   column-gap: 0.16em;
 }
 
+.single-detail-media .fourth-wall-media-cell:first-child {
+  grid-column: 1 / -1;
+}
+
 .detail-video {
   object-fit: cover;
   padding: 0;
