@@ -1161,6 +1161,10 @@ a:focus-visible {
   animation: none;
 }
 
+.detail-video-cell {
+  padding: 0;
+}
+
 .nina-texts-panel {
   display: flex;
   align-items: center;

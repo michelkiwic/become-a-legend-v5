@@ -796,7 +796,7 @@ export default function Home() {
                       />
                     </div>
                   ) : suppliedDetailVideos[detailId ?? ""] ? (
-                    <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
+                    <div className="fourth-wall-media-cell fourth-wall-media-cell-motion detail-video-cell">
                       <video
                         className="fourth-wall-image fourth-wall-image-motion detail-video"
                         src={suppliedDetailVideos[detailId ?? ""].src}
