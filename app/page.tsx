@@ -414,10 +414,6 @@ const detailContent: Record<string, DetailContent> = {
         paragraphs: ["Animation, film editing, sound, website"],
       },
       {
-        heading: "Daniel Hunziker",
-        paragraphs: ["Scenography"],
-      },
-      {
         heading: "Walter Willimann",
         paragraphs: ["Studio Organizer, logistics, finances"],
       },
