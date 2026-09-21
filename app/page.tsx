@@ -441,7 +441,7 @@ const suppliedDetailVideos: Record<string, { src: string; poster?: string; label
   "02": { src: "dance-dolls-video.webm", label: "Dance Dolls video" },
   "03": { src: "yoshini-moshini-loop-v2.webm", label: "Yoshini and Moshini performance video" },
   "04": { src: "the-ensemble-loop-v2.webm", label: "The Ensemble performance video" },
-  "05": { src: "the-audience-loop-v3.webm", label: "The Audience performance video" },
+  "05": { src: "the-audience-loop-v4.webm", label: "The Audience performance video" },
 };
 
 export default function Home() {
