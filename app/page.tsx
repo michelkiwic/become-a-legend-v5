@@ -439,6 +439,9 @@ const suppliedDetailImages: Record<string, { src: string; alt: string }> = {
 const suppliedDetailVideos: Record<string, { src: string; poster?: string; label: string }> = {
   "01": { src: "bla-blaa-blaa-video.webm", label: "Bla Blaa Blaa video" },
   "02": { src: "dance-dolls-video.webm", label: "Dance Dolls video" },
+  "03": { src: "yoshini-moshini-video.webm", label: "Yoshini and Moshini performance video" },
+  "04": { src: "the-ensemble-video.webm", label: "The Ensemble performance video" },
+  "05": { src: "the-audience-video.webm", label: "The Audience performance video" },
 };
 
 export default function Home() {
@@ -762,7 +765,20 @@ export default function Home() {
                       />
                     </div>
                   )}
-                  {["contacts", "inventory", "finances"].includes(detailId ?? "") ? null : detailId === "05" && detailCategory ? (
+                  {["contacts", "inventory", "finances"].includes(detailId ?? "") ? null : suppliedDetailVideos[detailId ?? ""] ? (
+                    <div className="fourth-wall-media-cell fourth-wall-media-cell-motion detail-video-cell">
+                      <video
+                        className="fourth-wall-image fourth-wall-image-motion detail-video"
+                        src={suppliedDetailVideos[detailId ?? ""].src}
+                        aria-label={suppliedDetailVideos[detailId ?? ""].label}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                      />
+                    </div>
+                  ) : detailId === "05" && detailCategory ? (
                     <div className="fourth-wall-media-cell fourth-wall-media-cell-motion">
                       <img
                         className="fourth-wall-image fourth-wall-image-motion"
@@ -793,19 +809,6 @@ export default function Home() {
                         src={detailCategory.detailSrc}
                         alt={detailCategory.closeup?.alt ?? `Figure for ${detailCategory.name}`}
                         draggable={false}
-                      />
-                    </div>
-                  ) : suppliedDetailVideos[detailId ?? ""] ? (
-                    <div className="fourth-wall-media-cell fourth-wall-media-cell-motion detail-video-cell">
-                      <video
-                        className="fourth-wall-image fourth-wall-image-motion detail-video"
-                        src={suppliedDetailVideos[detailId ?? ""].src}
-                        aria-label={suppliedDetailVideos[detailId ?? ""].label}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="metadata"
                       />
                     </div>
                   ) : detailId === "08" ? (
